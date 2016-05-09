@@ -1,0 +1,58 @@
+ul {
+		/* list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+		width: 100%; */
+		list-style: none; 
+		margin: 0; 
+		padding: .8em 0 .8em 0; 
+		background-color: #333;
+		width: 100%; 
+		text-align: center; 
+	}
+
+li {
+		/* display: inline-block;
+		text-align:center; 
+		margin:auto;
+		padding: 0;
+		width:auto; */
+		margin: 0; 
+		padding: 0; 
+		display: inline; 
+	}
+
+li a {
+		/* display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none; */
+		margin: 0; 
+		padding: .3em .4em .3em .4em; 
+		text-decoration: none; 
+		font-size: 120%;
+		color: white;
+	}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover 
+	{
+		/* background-color: #111; */
+		margin: 0; 
+		padding: .3em .4em .3em .4em; 
+		text-decoration: none; 
+		font-weight: bold; 
+		font-size: 120%;
+		color: #f6f0cc; 
+		background-color: #227755; 
+	}
+
+#section 
+	{
+		width:450px;
+		float:right;
+		padding:0px;
+	}
