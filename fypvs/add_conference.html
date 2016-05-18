@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<title>Add conference</title>
+</head>
+
+<body>
+<div id="box">
+	<div id="addconference">
+    	<form action="addconference.php" method="post" name="addconference">
+        <table>
+        	<tr>
+            	<td align="left" valign="top"><p>Conference name</p></td>
+                <td><input type="text" name="conf_name" class="twitter" placeholder="Enter conference name" required />
+            </tr>
+            <tr>
+            	<td align="left" valign="top"><p>Conference start date</p></td>
+                <td><input type="date" name="conf_startdate" class="twitter" placeholder="Format: YYYY/MM/DD" required />
+            </tr>
+            <tr>
+            	<td align="left" valign="top"><p>Conference end date</p></td>
+                <td><input type="date" name="conf_enddate" class="twitter" placeholder="Format: YYYY/MM/DD" required />
+            </tr>
+            <tr>
+            	<td align="left" valign="top"><p>Venue id</p></td>
+  		   		<td><input type="number" name="venue_id" class="twitter" placeholder="Venue id" min="200001" required /></td>
+                <td><a href="viewvenues.php" target="_blank">Venue list</a>
+            </td>
+            </tr>
+            
+            
+        </table>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

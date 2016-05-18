@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<title>Add speaker</title>
+</head>
+
+<body>
+<div id="box">
+	<div id="addspeaker">
+		<form action="addpeaker.php" method="post">
+        	<table border=0 width=60% cellspacing=30px align="center">
+            	<tr>
+                	<td align="left" valign="top"><p>First name</p></td>
+                    <td><input type="text" name="speaker_firstname" class="twitter" placeholder="Enter firstname" required/></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Last name</p></td>
+                    <td><input type="text" name="spaker_lastname" class="twitter" placeholder="Enter lastname" /></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Details</p></td>
+                    <td><input type="number" name="speaker_details" class="twitter" placeholder="Enter speaker details" /></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Speaker image</p></td>
+                    <td><input type="file" name="speaker_image" class="twitter"  /></td>
+                </tr>
+                
+                <tr>
+                	<td><input type="submit" name="submit" value="Submit"/></td>
+                	<td><input type="reset" name="reset" value="Clear"	/></td>
+                </tr>
+                	
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<title>Register</title>
+</head>
+
+<body>
+
+<div id="box">
+	<div id="addspeaker">
+		<form action="addparticipant.php" method="post">
+        	<table border=0 width=60% cellspacing=30px align="center">
+                 <tr>
+                	<td align="left" valign="top"><p>Email</p></td>
+                    <td><input type="email" name="p_email" placeholder="Enter email" required /></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Password</p></td>
+                    <td><input type="password" name="p_password" class="twitter" placeholder="Enter password" required/></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>First name</p></td>
+                    <td><input type="text" name="p_firstname" class="twitter" placeholder="Enter firstname" required/></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Surname</p></td>
+                    <td><input type="text" name="p_surname" class="twitter" placeholder="Enter surname"/></td>
+                </tr>
+                 <tr>
+                	<td align="left" valign="top"><p>Phone</p></td>
+                    <td><input type="tel" name="p_phone" class="twitter" placeholder="Enter phone number" /></td>
+                </tr>
+                
+                 <tr>
+                	<td align="left" valign="top"><p>Date of birth</p></td>
+                    <td><input type="date" name="p_dob" class="twitter" placeholder="YYYY/MM/DD" required/></td>
+                </tr>
+                
+                 <tr>
+                	<td align="left" valign="top"><p>Address</p></td>
+                    <td><input type="text" name="p_address" class="twitter" placeholder="Enter address" required /></td>
+                </tr>
+                
+                 <tr>
+                	<td align="left" valign="top"><p>Country</p></td>
+                    <td><input type="text" name="p_country" class="twitter" placeholder="Enter country name" required /></td>
+                </tr>
+                
+                 <tr>
+                	<td align="left" valign="top"><p>City</p></td>
+                    <td><input type="text" name="p_city" class="twitter" placeholder="Enter city" /></td>
+                </tr>
+                 <tr>
+                	<td align="left" valign="top"><p>State</p></td>
+                    <td><input type="text" name="p_state" class="twitter" placeholder="Enter state" /></td>
+                </tr>
+
+                 <tr>
+                	<td align="left" valign="top"><p>Occupation</p></td>
+                    <td><input type="text" name="p_occupation" class="twitter" placeholder="Enter occupation" /></td>
+                </tr>
+                 <tr>
+                	<td align="left" valign="top"><p>Newsletter subscription</p></td>
+                    <td><input type="checkbox" name="p_newsletter" class="twitter"/></td>
+                </tr>
+             
+                <tr>
+                	<td><input type="submit" name="submit" value="Submit"/></td>
+                	<td><input type="reset" name="reset" value="Clear"	/></td>
+                </tr>
+                	
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<!-- Author: Sau Pillai Sadeiyen -->
+<head>
+<meta charset="utf-8">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<title>Add venue</title>
+</head>
+
+<body>
+<div id="box">
+	<div id="addvenue">
+	<form action="addvenue.php" method="post">
+		<table  border=0 width=60% cellspacing=30px align="center">
+        		<tr>
+                	<td align="left" valign="top"><p>Venue name</p></td>
+       	            <td><input type="text" name="venue_name" class="twitter" placeholder="Enter venue name" required /></td>
+                </tr>	
+            	<tr>
+                	<td align="left" valign="top"><p>Venue's address</p></td>
+       	            <td><input type="text" name="venue_address" class="twitter" placeholder="Enter Venue Address" required /></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Number of rooms</p></td>
+       	            <td><input type="number" name="venue_nrooms" class="twitter" placeholder="No rooms" min="1" max="40" required  /></td>
+                </tr>
+            	<tr>
+                	<td><input type="submit" name="submit" value="Submit"/></td>
+                	<td><input type="reset" name="reset" value="Clear"	/></td>
+                </tr>
+                </table>
+	</form>
+	</div>
+</div>
+</body>
+</html>

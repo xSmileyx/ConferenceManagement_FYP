@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<title>Add Pass type</title>
+</head>
+
+<body>
+<div id="box">
+	<div id="addpasstype">
+		<form action="addpasstype.php" method="post">
+        	<table border=0 width=60% cellspacing=30px align="center">
+            	<tr>
+                	<td align="left" valign="top"><p>Pass type</p></td>
+                    <td><input type="text" name="pass_type" class="twitter" placeholder="Enter Pass type name" required/></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Pass description</p></td>
+                    <td><input type="text" name="pass_desc" class="twitter" placeholder="Enter Pass type description" required /></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Pass price</p></td>
+                    <td><input type="number" name="pass_price" class="twitter" placeholder="Enter Pass price" min="1" required /></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Amount of pass</p></td>
+                    <td><input type="number" name="pass_amount" class="twitter" placeholder="Enter amount of passes" min="1" required /></td>
+                </tr>
+                
+                <tr>
+                	<td><input type="submit" name="submit" value="Submit"/></td>
+                	<td><input type="reset" name="reset" value="Clear"	/></td>
+                </tr>
+                	
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

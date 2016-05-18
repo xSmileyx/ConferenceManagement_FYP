@@ -21,20 +21,18 @@ PRIMARY KEY(caterer_id)
 
 CREATE TABLE tblparticipant(
 	p_id			INT(6),
-	p_username		VARCHAR(20),
+	p_email			VARCHAR(50),
 	p_password		VARCHAR(15),
 	p_firstname		VARCHAR(20),
 	p_surname		VARCHAR(30),
-	p_email			VARCHAR(50),
 	p_phone			INT(15),
 	p_dob			DATE,
 	p_address		VARCHAR(50),
 	p_country		VARCHAR(30),
 	p_city			VARCHAR(30),
-	p_state			VARCHAR(30),
-	p_postalcode	VARCHAR(10),		
+	p_state			VARCHAR(30),	
+	p_occupation	VARCHAR(30),	
 	p_newsletter	BOOLEAN,
-	p_occupation	VARCHAR(30),
 	
 PRIMARY KEY(p_id)
 );
@@ -45,6 +43,7 @@ CREATE TABLE tblspeaker(
 	speaker_lastname	VARCHAR(40),
 	speaker_details		TEXT,
 	speaker_image		LONGBLOB,
+
 PRIMARY KEY(speaker_id)
 );
 
@@ -70,10 +69,9 @@ PRIMARY KEY(venue_id)
 CREATE TABLE tblpasstype(
 	pass_id			INT(6),
 	pass_type		VARCHAR(25),
-	pass_desc		TEXT,
+	pass_desc		VARCHAR(255),
 	pass_price		INT(5),
 	pass_amount		INT(4),
-	conf_id			INT(6),
 	
 PRIMARY KEY(pass_id)
 ); 
@@ -83,7 +81,6 @@ CREATE TABLE tblconference(
 	conf_name		VARCHAR(50),
 	conf_startdate	DATE,
 	conf_enddate	DATE,
-	conf_numpass	INT(4),
 	caterer_id		INT(6),
 	venue_id		INT(6),
 	em_id			INT(6),
@@ -107,13 +104,15 @@ FOREIGN KEY (sponsor_id) REFERENCES tblsponsor(sponsor_id)
 );
 
 CREATE TABLE tblconf_participant(
+	confpass_reference	INT(6),
 	conf_id				INT(6),
 	p_id				INT(6),
-	confpass_reference	INT(6),
+	pass_id				INT(6),
 
 PRIMARY KEY(confpass_reference),
 FOREIGN KEY (conf_id) REFERENCES tblconference(conf_id),
-FOREIGN KEY (p_id) REFERENCES tblparticipant(p_id)
+FOREIGN KEY (p_id) REFERENCES tblparticipant(p_id),
+FOREIGN KEY (pass_id) REFERENCES tblpasstype(pass_id)
 );
 
 CREATE TABLE tblsession(
@@ -127,8 +126,8 @@ CREATE TABLE tblsession(
 	session_name		VARCHAR(100),
 
 PRIMARY KEY (session_id),
-FOREIGN KEY(conf_id) REFERENCES tblconference(conf_id),
-FOREIGN KEY(speaker_id) REFERENCES tblspeaker(speaker_id)
+FOREIGN KEY(conf_id) REFERENCES tblconf_speaker(conf_id),
+FOREIGN KEY(speaker_id) REFERENCES tblconf_speaker(speaker_id)
 );
 
 CREATE TABLE tblbookingdetails(
@@ -145,4 +144,14 @@ PRIMARY KEY(booking_id),
 FOREIGN KEY(p_id) REFERENCES tblparticipant(p_id),
 FOREIGN KEY(confpass_reference) REFERENCES tblconf_participant(confpass_reference)
 
+);
+
+CREATE TABLE tblconf_speaker(
+	cspeak_index	INT(6),
+	conf_id			INT(6),
+	speaker_id		INT(6),
+
+	PRIMARY KEY (cspeak_index),
+	FOREIGN KEY (conf_id) REFERENCES tblconference(conf_id),
+	FOREIGN KEY (speaker_id) REFERENCES tblspeaker(speaker_id)
 );

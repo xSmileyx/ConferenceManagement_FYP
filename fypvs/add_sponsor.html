@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<title>Add sponsor</title>
+</head>
+
+<body>
+	
+<div id="box">
+	<div id="addsponsor">
+		<form action="addsponsor.php" method="post">
+        	<table border=0 width=60% cellspacing=30px align="center">
+            	<tr>
+                	<td align="left" valign="top"><p>Sponsor name</p></td>
+                    <td><input type="text" name="sponsor_name" class="twitter" placeholder="Enter name" required/></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Email</p></td>
+                    <td><input type="email" name="sponsor_email" class="twitter" placeholder="Enter email" /></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Phone</p></td>
+                    <td><input type="tel" name="sponsor_phone" class="twitter" placeholder="Phone number" required /></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Sponsor Logo</p></td>
+                    <td><input type="file" name="sponsor_logo" class="twitter"  /></td>
+                </tr>
+                
+                <tr>
+                	<td><input type="submit" name="submit" value="Submit"/></td>
+                	<td><input type="reset" name="reset" value="Clear"	/></td>
+                </tr>
+                	
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
