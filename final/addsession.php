@@ -73,10 +73,10 @@
 					<div class="dropbtn2box">
 						<a href="#" class="dropbtn2">Conference Management</a>
 					</div>
-						<div class="dropdown-content2">
-								<a href="view_sponsors.php" class="dropbtn2 dropdown-content2-item">Manage Sponsors</a>
-								<a href="view_venues.php" class="dropbtn2 dropdown-content2-item">Manage Venue</a>
-								<a href="view_speaker.php" class="dropbtn2 dropdown-content2-item">Manage Speakers</a>
+							<div class="dropdown-content2">
+								<a href="#" class="dropbtn2 dropdown-content2-item">Manage Sponsors</a>
+								<a href="#" class="dropbtn2 dropdown-content2-item">Manage Venue</a>
+								<a href="#" class="dropbtn2 dropdown-content2-item">Manage Speakers</a>
 								<a href="#" class="dropbtn2 dropdown-content2-item">Manage Caterers</a>
 						</div>
 					</li>
@@ -115,30 +115,73 @@
 		</section>
 	  <!-- section 2 -->
       <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
 
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+	  	<div id="body">
+		<div id="addsession">
+          <h1 align="center">Add Session</h1>
+    	<form action="addsession.php" method="post" name="addsession">
+        <table align="center">
+        <tr>
+        <td align="left" valign="top"><p>Session name</p></td>
+                <td colspan="2"><input type="time" name="session_name" class="twitter" placeholder="Session name " required /></td>
+            </tr>
+        <tr>
+            	<td width="100" align="left" valign="top"><p>Conference id</p></td>
+                <td width="80">	     
+                 <?php
+					$query = "SELECT conf_id from tblconference ";
+					$result = mysql_query($query);
+					echo "<select name='conf_id'>";
+					echo "<option value='0'>-Select-</option>";
+					while($row = mysql_fetch_array($result))
+					{
+    					echo "<option value='".$row['conf_id']."'>".$row['conf_id']."</option>";
+					}
+					echo "</select>";
+				?>
+                </td>
+                <td><a href="viewconference.php" target="_blank">Conference list</a></td>
+            </tr>
+            <tr>
+            	<td align="left" valign="top"><p>Speaker id</p></td>
+                <td>	     
+                 <?php
+					$query = "SELECT speaker_id from tblspeaker ";
+					$result = mysql_query($query);
+					echo "<select name='speaker_id'>";
+					echo "<option value='0'>-Select-</option>";
+					while($row = mysql_fetch_array($result))
+					{
+    					echo "<option value='".$row['speaker_id']."'>".$row['speaker_id']."</option>";
+					}
+					echo "</select>";
+				?>
+                </td>
+                <td><a href="viewspeaker.php" target="_blank">Speaker list</a></td>
+            </tr>
+            <tr>
+            <td align="left" valign="top"><p>Session day</p></td>
+                <td colspan="2"><input type="date" name="session_day" class="twitter" placeholder="YYYY/MM/DD " required /></td>
+            </tr>
+            <td align="left" valign="top"><p>Start time</p></td>
+                <td colspan="2"><input type="time" name="session_starttime" class="twitter" placeholder="HH:MM:SS " required /></td>
+            </tr>
+            <td align="left" valign="top"><p>End time</p></td>
+                <td colspan="2"><input type="time" name="session_endtime" class="twitter" placeholder="HH:MM:SS " required /></td>
+            </tr>
+            <td align="left" valign="top"><p>Session room</p></td>
+                <td colspan="2"><input type="number" name="session_room" class="twitter" placeholder="Room name" required /></td>
+            </tr>
+            <tr>
+					<td></td>
+                    <td><input type="submit" name="submit" value="Submit"/></td>
+                	<td><input type="reset" name="reset" value="Clear"	/></td>          
+			</tr>        
+        </table>
+        </form>
+    </div>
+</div>
+	  
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">

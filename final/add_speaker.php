@@ -115,30 +115,42 @@
 		</section>
 	  <!-- section 2 -->
       <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
 
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+<div id="box">
+	<div id="addspeaker">
+      <h1 align="center">Add Speaker</h1>
+		<form action="addspeaker.php" method="post">
+        	<table align="center">
+            	<tr>
+                	<td align="left" valign="top"><p>First name</p></td>
+                    <td><input type="text" name="speaker_firstname" class="twitter" placeholder="Enter firstname" required/></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Last name</p></td>
+                    <td><input type="text" name="spaker_lastname" class="twitter" placeholder="Enter lastname" /></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Details</p></td>
+                    <td><textarea name="speaker_details" class="twitter"></textarea></td>
+                 
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Speaker image</p></td>
+                    <td><input type="file" name="speaker_image" class="twitter"  /></td>
+                </tr>
+                
+                <tr>
+                	<td height="60"></td>
+                	<td><div style="float:left;"><input type="submit" name="submit" value="Submit"/></div><div style="text-align:center;"><input type=reset name="reset" value="Clear"/></div></td>
+                </tr>
+                	
+            </table>
+        </form>
+    </div>
+</div>
+	  
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">

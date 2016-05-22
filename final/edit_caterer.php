@@ -115,30 +115,40 @@
 		</section>
 	  <!-- section 2 -->
       <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
 
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+	  <div id="box">
+	<div id="editcaterer">
+	<h1 align="center">Add Caterer</h1>
+    </br>
+		<form action="updatecaterer.php" method="post">
+        <table align="center">
+                 <tr>
+                	<td align="left" valign="top"><p>Caterer ID</p></td>
+                    <td colspan="2"><input name="caterer_id" value="<?php echo $row[0];?>" disabled/></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Caterer name</p></td>
+                    <td colspan="2"><input type="text" name="caterer_name" class="twitter" value="<?php echo $row[1];?>" required /></td>
+                </tr>
+                                <tr>
+                	<td align="left" valign="top"><p>Caterer phone</p></td>
+                    <td colspan="2"><input type="tel" name="caterer_phone" class="twitter" value="<?php echo $row[2];?>" required /></td>
+                </tr>
+                                <tr>
+                	<td align="left" valign="top"><p>Caterer email</p></td>
+                    <td colspan="2"><input type="email" name="caterer_email" class="twitter" value="<?php echo $row[3];?>" /></td>
+                </tr>
+                <tr>
+                    <td><input type='hidden' name='caterer_id' value="<?php echo $row[0];?>"></td>
+					<td><input type="submit" value="Modify"/></td>
+                    <td><input type="button" onClick="goBack()" value="Back"/></td>
+
+                </tr>
+        </table>
+		</form>
+     </div>
+</div>
+	  
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">

@@ -115,30 +115,40 @@
 		</section>
 	  <!-- section 2 -->
       <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
 
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+<div id="box">
+	<div id="editvenue">
+	<h1 align="center">Edit Venue</h1>
+		<form action="updatevenue.php" method="post">
+        <table align="center">
+                 <tr>
+                	<td align="left" valign="top"><p>Venue ID</p></td>
+                    <td><input name="venue_id" value="<?php echo $row[0];?>" disabled/></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Venue name</p></td>
+                    <td><input type="text" name="venue_name" value="<?php echo $row[1];?>" required /></td>
+                </tr>
+                                <tr>
+                	<td align="left" valign="top"><p>Address</p></td>
+                    <td><input type="text" name="venue_address" value="<?php echo $row[2];?>" required /></td>
+                </tr>
+                                <tr>
+                	<td align="left" valign="top"><p>Number of rooms</p></td>
+                    <td><input type="number" name="venue_nrooms" value="<?php echo $row[3];?>" required/></td>
+                </tr>
+                <tr>
+                    <td><input type='hidden' name='venue_id' value="<?php echo $row[0];?>"></td>
+                    <td><div style="float:left;"><input type="submit" value="Modify"/></div><div style="text-align:center;"><input type="button" onClick="goBack()" value="Back"/></div></td>
+
+                </tr>
+        </table>
+		</form>
+
+
+     </div>
+</div>
+	  
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">

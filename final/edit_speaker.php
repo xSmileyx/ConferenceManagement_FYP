@@ -115,30 +115,42 @@
 		</section>
 	  <!-- section 2 -->
       <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
 
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+<div id="box">
+	<div id="editsponsor">
+		<form action="updatespeaker.php" method="post">
+        <table align="center">
+                 <tr>
+                	<td align="left" valign="top"><p>Speaker ID</p></td>
+                    <td><input name="speaker_id" class="twitter" value="<?php echo $row[0];?>" disabled/></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Speaker first name</p></td>
+                    <td><input type="text" name="speaker_firstname" class="twitter" value="<?php echo $row[1];?>" required /></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Speaker last name</p></td>
+                    <td><input type="text" name="speaker_lastname" class="twitter" value="<?php echo $row[2];?>" /></td>
+                </tr>                                <tr>
+                	<td align="left" valign="top"><p>Speaker details</p></td>
+                    <td><textarea name="speaker_details" class="twitter" value="<?php echo $row[3];?>"></textarea></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Speaker Image</p></td>
+                    <td><input type="file" name="speaker_image" class="twitter" value="<?php echo $row[4];?>" /></td>
+                </tr>
+                <tr>
+                    <td><input type='hidden' name='speaker_id' value="<?php echo $row[0];?>"></td>
+                    <td><div style="float:left;"><input type="submit" value="Modify"/></div><div style="text-align:center;"><input type="button" onClick="goBack()" value="Back"/></div></td>
+
+                </tr>
+        </table>
+		</form>
+
+
+     </div>
+</div>
+	  
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">

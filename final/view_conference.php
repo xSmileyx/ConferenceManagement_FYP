@@ -115,30 +115,46 @@
 		</section>
 	  <!-- section 2 -->
       <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
 
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+	  <?php
+include 'dbconnection.php';
+
+$query="SELECT * FROM tblconference" ;
+$executeQuery=mysql_query($query);
+if (!$executeQuery)
+
+{
+ die ('Could not connect'.mysql_error());
+}
+
+echo '<h2 style="color: blue;font-family: arial" align=center>List of conferences</h2>';
+
+echo '<table border=1  table id=table1 align=center>';
+echo '<tr>';
+echo '<th>Conference ID</th>';
+echo '<th>Conference name</th>';
+echo '<th>Start date</th>';
+echo '<th>End date</th>';
+echo '<th>Caterer ID</th>';
+echo '<th>Venue ID</th>';
+echo '</tr>';
+
+while ($row=mysql_fetch_row($executeQuery))
+{
+echo '<tr>';
+echo '<td>'.$row[0].'</td>';
+echo '<td>'.$row[1].'</td>';
+echo '<td>'.$row[2].'</td>';
+echo '<td>'.$row[3].'</td>';
+echo '<td>'.$row[5].'</td>';
+echo '<td>'.$row[6].'</td>';
+echo '</tr>';
+}
+
+echo '</table>';
+
+?>
+	  
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">

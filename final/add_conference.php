@@ -73,10 +73,10 @@
 					<div class="dropbtn2box">
 						<a href="#" class="dropbtn2">Conference Management</a>
 					</div>
-							<div class="dropdown-content2">
-								<a href="#" class="dropbtn2 dropdown-content2-item">Manage Sponsors</a>
-								<a href="#" class="dropbtn2 dropdown-content2-item">Manage Venue</a>
-								<a href="#" class="dropbtn2 dropdown-content2-item">Manage Speakers</a>
+						<div class="dropdown-content2">
+								<a href="view_sponsors.php" class="dropbtn2 dropdown-content2-item">Manage Sponsors</a>
+								<a href="view_venues.php" class="dropbtn2 dropdown-content2-item">Manage Venue</a>
+								<a href="view_speaker.php" class="dropbtn2 dropdown-content2-item">Manage Speakers</a>
 								<a href="#" class="dropbtn2 dropdown-content2-item">Manage Caterers</a>
 						</div>
 					</li>
@@ -117,7 +117,7 @@
       <section id="main_section">
       <div id="box">
 	<div id="addconference">
-    <h1 align="center">Add Caterer</h1>
+    <h1 align="center">Add Conference</h1>
     </br>
     	<form action="addconference.php" method="post" name="addconference">
         <table align="center"> <?--width="480" height="541"  --?>

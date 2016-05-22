@@ -115,30 +115,43 @@
 		</section>
 	  <!-- section 2 -->
       <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
 
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+	      	<div id="box">
+	<div id="editsponsor">
+	<h1 align="center">Edit Sponsor</h1>
+		<form action="updatesponsor.php" method="post">
+        <table align="center">
+                 <tr>
+                	<td align="left" valign="top"><p>Sponsor ID</p></td>
+                    <td><input name="sponsor_id" value="<?php echo $row[0];?>" disabled/></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Sponsor name</p></td>
+                    <td><input type="text" name="sponsor_name" value="<?php echo $row[1];?>" required /></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Email</p></td>
+                    <td><input type="email" name="sponsor_email" value="<?php echo $row[2];?>" required /></td>
+                </tr>                                <tr>
+                	<td align="left" valign="top"><p>Phone</p></td>
+                    <td><input type="tel" name="sponsor_phone" value="<?php echo $row[3];?>" required/></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Sponsor Logo</p></td>
+                    <td><input type="file" name="sponsor_logo" value="<?php echo $row[4];?>" /></td>
+                </tr>
+                <tr>
+                    <td height="70"><input type='hidden' name='sponsor_id' value="<?php echo $row[0];?>"></td>
+                    <td><div style="float:left;"><input type="submit" value="Modify"/></div><div style="text-align:center;"><input type="button" onClick="goBack()" value="Back"/></div></td>
+
+                </tr>
+        </table>
+		</form>
+
+
+     </div>
+</div>
+	  
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">

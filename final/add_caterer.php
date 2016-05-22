@@ -115,30 +115,33 @@
 		</section>
 	  <!-- section 2 -->
       <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
 
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+	  <div id="box">
+	<div id="addcater">
+    	<h1 align="center">Add Caterer</h1>
+		<form action="addcaterer.php" method="post" name="addcaterer" align="center">
+        	<table align="center">
+        		<tr>
+                	<td width="160" align="left" valign="top"><p>Caterer's name</p></td>
+       	            <td><input type="text" name="caterer_name" class="twitter" placeholder="Enter caterer name" required /></td>
+                </tr>	
+            	<tr>
+                	<td align="left" valign="top"><p>Caterer's Phone number</p></td>
+       	            <td><input type="tel" name="caterer_phone" class="twitter" placeholder="Enter caterer phone" required /></td>
+                </tr>
+                <tr>
+                	<td align="left" valign="top"><p>Caterer's Email</p></td>
+       	            <td><input type="email" name="caterer_email" class="twitter" placeholder="Email"  /></td>
+                </tr>
+            	<tr>
+                	<td height="60"></td>
+                	<td><div style="float:left;"><input type="submit" name="submit" value="Submit"/></div><div style="text-align:center;"><input type="reset" name="reset" value="Clear"/></div></td>
+                </tr>
+            </table>
+        </form>
+	</div>
+</div>
+	  
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">

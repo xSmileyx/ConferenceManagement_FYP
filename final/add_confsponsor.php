@@ -114,31 +114,64 @@
 			</nav>
 		</section>
 	  <!-- section 2 -->
-      <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
-
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+		<section id="main_section">
+		     <div id="box">
+<div id="addconfsponsor">
+<h1 align="center">Add conference sponsor</h1></br>
+    	<form action="addconfsponsor.php" method="post" name="addconference">
+        <table align="center">
+        <tr>
+            	<td align="left" valign="top"><p>Sponsor id</p></td>
+                <td width="80">	     
+                 <?php
+					$query = "SELECT sponsor_id from tblsponsor ";
+					$result = mysql_query($query);
+					echo "<select name='sponsor_id'>";
+					echo "<option value='0'>-Select-</option>";
+					while($row = mysql_fetch_array($result))
+					{
+    					echo "<option value='".$row['sponsor_id']."'>".$row['sponsor_id']."</option>";
+					}
+					echo "</select>";
+				?>
+                </td>
+                <td><a href="viewsponsors.php" target="_blank">Sponsor list</a></td>
+            </tr>
+            <tr>
+            	<td align="left" valign="top"><p>Conference id</p></td>
+                <td>	     
+                 <?php
+					$query = "SELECT conf_id from tblconference ";
+					$result = mysql_query($query);
+					echo "<select name='conf_id'>";
+					echo "<option value='0'>-Select-</option>";
+					while($row = mysql_fetch_array($result))
+					{
+    					echo "<option value='".$row['conf_id']."'>".$row['conf_id']."</option>";
+					}
+					echo "</select>";
+				?>
+                </td>
+                <td><a href="viewconference.php" target="_blank">Conference list</a></td>
+            </tr>
+            <tr>
+            <td align="left" valign="top" width="140"><p>Amount provided RM</p></td>
+                <td colspan="2"><input type="number" name="amount_provided" class="twitter" placeholder="Amount in RM " required /></td>
+            </tr>
+            <tr>
+					<td></td>
+                    <td align="left"><input type="submit" name="submit" value="Submit"/></td>
+                	<td  align="left"><input type="reset" name="reset" value="Clear"	/></td>          
+			</tr>        
+        </table>
+        </form>
+    </div>
+    </div>
+     
+     
+     
+     
+     
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">

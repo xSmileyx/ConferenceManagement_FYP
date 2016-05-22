@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<title>Conference Management</title>
+<style>
+#table1{
+	font-size:5px;
+	font: bold 15px "Trebuchet MS", Verdana, Arial, Helvetica,
+	sans-serif;
+	color:#333;
+	cellpadding:20px;
+	text-align:center;
+}
+</style>
+<title>Delete Sponsor List</title>
 <meta charset="iso-8859-1">
 <link rel="stylesheet" href="styles/layout.css" type="text/css">
 <link rel="stylesheet" href="styles/style.css" type="text/css">
@@ -16,44 +26,11 @@
     </div>
     <nav>
       <ul>
-        <li class="dropdown">
-			<a href="#" class="dropbtn">Home</a>
-		</li>
-        
-		<li class="dropdown">
-			<a href="#" class="dropbtn">About Us</a>
-				<div class="dropdown-content">
-				<a href="#">Company History</a>
-				<a href="#">Organization Chart</a>
-				<a href="#">Location Details</a>
-				</div>
-		</li>
-		
-		<li class="dropdown">
-			<a href="#" class="dropbtn">Conferences</a>
-				<div class="dropdown-content">
-				<a href="#">All Upcoming Events</a>
-				<a href="#">Past Events</a>
-				</div>
-		</li>
-		
-		<li class="dropdown">
-			<a href="#" class="dropbtn">My Account</a>
-				<div class="dropdown-content">
-				<a href="#">Register</a>
-				<a href="#">Log In</a>
-				</div>
-		</li>
-		
-		<li class="dropdown last">
-			<a href="#" class="dropbtn">Help</a>
-				<div class="dropdown-content">
-				<a href="#">User Guide</a>
-				<a href="#">FAQ</a>
-				</div>
-		</li>
-		
-        <!-- <li class="last"><a href="#">Text Link</a></li> -->
+        <li><a href="#">Text Link</a></li>
+        <li><a href="#">Text Link</a></li>
+        <li><a href="#">Text Link</a></li>
+        <li><a href="#">Text Link</a></li>
+        <li class="last"><a href="#">Text Link</a></li>
       </ul>
     </nav>
   </header>
@@ -65,80 +42,55 @@
     <section id="slider"><a href="#"><img src="images/demo/940x360.gif" alt=""></a></section>
     <!-- main content -->
     <div id="content">
-		<section id="side_menu_pane">
-			<nav id="side_menu">
-			<div id="side_menu_title">Conference Menu</div>
-				<ul>
-					<li class="dropdown2">
-					<div class="dropbtn2box">
-						<a href="#" class="dropbtn2">Conference Management</a>
-					</div>
-						<div class="dropdown-content2">
-								<a href="view_sponsors.php" class="dropbtn2 dropdown-content2-item">Manage Sponsors</a>
-								<a href="view_venues.php" class="dropbtn2 dropdown-content2-item">Manage Venue</a>
-								<a href="view_speaker.php" class="dropbtn2 dropdown-content2-item">Manage Speakers</a>
-								<a href="#" class="dropbtn2 dropdown-content2-item">Manage Caterers</a>
-						</div>
-					</li>
-					
-					<li class="dropdown2">
-					<div class="dropbtn2box">
-						<a href="#" class="dropbtn2">View Schedule</a>
-					</div>
-					</li>
-					
-					<li class="dropdown2">
-					<div class="dropbtn2box">
-						<a href="#" class="dropbtn2">Registration Summary</a>
-					</div>
-					</li>
-					
-					<li class="dropdown2">
-					<div class="dropbtn2box">
-						<a href="#" class="dropbtn2">Generate Checklist</a>
-					</div>
-							<div class="dropdown-content2">
-								<a href="#" class="dropbtn2 dropdown-content2-item">Participants Checklist</a>
-								<a href="#" class="dropbtn2 dropdown-content2-item">Guests Checklist</a>
-								<a href="#" class="dropbtn2 dropdown-content2-item">Sponsors Checklist</a>
-								<a href="#" class="dropbtn2 dropdown-content2-item">Speakers Checklist</a>
-						</div>
-					</li>
-					
-					<li class="dropdown2">
-					<div class="dropbtn2box">
-						<a href="#" class="dropbtn2">Feedback Report</a>
-					</div>
-					</li>
-				</ul>
-			</nav>
-		</section>
-	  <!-- section 2 -->
-      <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
+      <!-- section 2 -->
+      <section>
 
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+<?php
+include 'dbconnection.php';
+
+$query="SELECT * FROM tblsponsor" ;
+
+$executeQuery=mysql_query($query);
+
+if (!$executeQuery)
+{
+ die ('Could not connect'.mysql_error());
+}
+$query_info=mysql_query($query) or die(mysql_error());
+$query_info_count=mysql_num_rows($query_info);
+
+
+echo '<h2 style="color: blue;font-family: arial" align=center>List of Caterers</h2>';
+
+
+echo '<table border=0  table id=table1 align=center cellspacing="10px">';
+echo '<tr>';
+echo '<td>Sponsor ID &nbsp;&nbsp;&nbsp;</td>';
+echo '<td>Sponsor name &nbsp;&nbsp;&nbsp;</td>';
+echo '<td>Email &nbsp;&nbsp;&nbsp;</td>';
+echo '<td>Phone &nbsp;&nbsp;&nbsp;</td>';
+echo '</tr>';
+
+while ($row=mysql_fetch_row($executeQuery))
+{
+	
+echo '<tr>';
+echo '<td>'.$row[0].'</td>';
+echo '<td>'.$row[1].'</td>';
+echo '<td>'.$row[2].'</td>';
+echo '<td>'.$row[3].'</td>';
+echo "<td><form method='post' action='deletesponsor.php'><input type='hidden' name='sponsor_id' value='".$row[0]."'><input type='submit' value='Edit'></form></td>";
+echo '</tr>';
+}
+echo '</table>';
+
+?>
+<?php
+// close connection
+mysql_close();
+?>
+     
+     
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">
@@ -147,20 +99,23 @@
     </div>
     <!-- right column -->
     <aside id="right_column">
-      <h2 class="title">Upcoming Events</h2>
+      <h2 class="title">Categories</h2>
       <nav>
         <ul>
-          <li><a href="#">Conference Event 1</a></li>
-          <li><a href="#">Conference Event 2</a></li>
-          <li><a href="#">Conference Event 3</a></li>
-          <li><a href="#">Conference Event 4</a></li>
-          <li><a href="#">Conference Event 5</a></li>
-          <li><a href="#">Conference Event 6</a></li>
-          <li class="last"><a href="#">Conference Event 7</a></li>
+          <li><a href="#">Free Website Templates</a></li>
+          <li><a href="#">Free CSS Templates</a></li>
+          <li><a href="#">Free XHTML Templates</a></li>
+          <li><a href="#">Free Web Templates</a></li>
+          <li><a href="#">Free Website Layouts</a></li>
+          <li><a href="#">Free HTML 5 Templates</a></li>
+          <li><a href="#">Free Webdesign Templates</a></li>
+          <li><a href="#">Free FireWorks Templates</a></li>
+          <li><a href="#">Free PNG Templates</a></li>
+          <li class="last"><a href="#">Free Website Themes</a></li>
         </ul>
       </nav>
       <!-- /nav -->
-      <h2 class="title">Contact Us At</h2>
+      <h2 class="title">Get In Contact</h2>
       <section class="last">
         <address>
         Full Name<br>

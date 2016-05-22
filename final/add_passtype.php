@@ -115,30 +115,42 @@
 		</section>
 	  <!-- section 2 -->
       <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
 
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+<div id="box">
+	<div id="addpasstype">
+    <h1 align="center">Add Pass Type</h1>
+		<form action="addpasstype.php" method="post">
+        	<table align="center">
+            	<tr>
+                	<td align="left" valign="top"><p>Pass type</p></td>
+                    <td><input type="text" name="pass_type" class="twitter" placeholder="Enter Pass type name" required/></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Pass description</p></td>
+                    <td><input type="text" name="pass_desc" class="twitter" placeholder="Enter Pass type description" required /></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Pass price</p></td>
+                    <td><input type="number" name="pass_price" class="twitter" placeholder="Enter Pass price" min="1" required /></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Amount of pass</p></td>
+                    <td><input type="number" name="pass_amount" class="twitter" placeholder="Enter amount of passes" min="1" required /></td>
+                </tr>
+                
+                <tr>
+                	<td></td>
+                	<td><div style="float:left;"><input type="submit" name="submit" value="Submit"/></div><div style="text-align:center;"><input type=reset name="reset" value="Clear"/><div></td>
+                </tr>
+                	
+            </table>
+        </form>
+    </div>
+</div>
+	  
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">

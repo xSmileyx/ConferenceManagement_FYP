@@ -115,30 +115,42 @@
 		</section>
 	  <!-- section 2 -->
       <section id="main_section">
-		<h1>
-		Conference Details
-		</h1>
-		The Autistic Children Programme is held to enable these children to reach out.
 
-		&lt;more text&gt; a a a a a aaaaaaaaa
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt;
-		<br/>
-		&lt;more text&gt
-		
-		<h2>
-		Venue Details
-		</h2>
-		<strong> Date: </strong> 1 June 2016
-		<br/>
-		<strong> Day: </strong> Wednesday
-		<br/>
-		<strong> Time: </strong>9am - 5pm
-		<br/>
+<div id="box">
+	<div id="addsponsor">
+    <h1 align="center">Add Sponsor</h1>
+		<form action="addsponsor.php" method="post">
+        	<table align="center">
+            	<tr>
+                	<td width="100" align="left" valign="top"><p>Sponsor name</p></td>
+                    <td><input type="text" name="sponsor_name" class="twitter" placeholder="Enter name" required/></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Email</p></td>
+                    <td><input type="email" name="sponsor_email" class="twitter" placeholder="Enter email" /></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Phone</p></td>
+                    <td><input type="tel" name="sponsor_phone" class="twitter" placeholder="Phone number" required /></td>
+                </tr>
+                
+                <tr>
+                	<td align="left" valign="top"><p>Sponsor Logo</p></td>
+                    <td><input type="file" name="sponsor_logo" class="twitter"  /></td>
+                </tr>
+                
+                <tr>
+                	<td height="60"></td>
+                	<td><div style="float:left"><input type="submit" name="submit" value="Submit"/></div><div style="text-align:center"><input type="reset" name="reset" value="Clear"/></div></td>
+                </tr>
+                	
+            </table>
+        </form>
+    </div>
+</div>
+	  
       </section>
       <!-- section 2 -->
       <section id="latest" class="last">
