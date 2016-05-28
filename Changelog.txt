@@ -1,0 +1,14 @@
+=====DATABASE======
+-Added booking_date as DATE in tblbookings
+-Added booking_date as DATE in tbltourbookings
+-Added purchase_date as DATE in tblconf_participant
+
+
+=====Interface=====
+-Added Home function/link for the Participant
+-Added Home function/link in the main pre-login pages
+-Logout button moved to the top of the screen in Participant pages
+
+=====FUNCTION=====
+-Fixed the date validation so that the participant cannot cancel 
+the participation/bookings 5 days after booking/purchase date
